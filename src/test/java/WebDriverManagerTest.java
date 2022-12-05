@@ -9,10 +9,16 @@ import org.testng.annotations.Test;
 public class WebDriverManagerTest {
     @Test
     public void openBrowser() {
+//        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.firefoxdriver().setup();
         WebDriverManager.edgedriver().setup();
-        WebDriver driver = new EdgeDriver();
-        driver.manage().window().maximize();
+        WebDriver chromeDriver = new ChromeDriver();
+        WebDriver firefoxDriver = new FirefoxDriver();
+        WebDriver edgeDriver = new EdgeDriver();
+        chromeDriver.manage().window().maximize();
         Dimension windowsSize = new Dimension(200, 200);
-        driver.manage().window().setSize(windowsSize);
+        edgeDriver.manage().window().setSize(windowsSize);
+        chromeDriver.quit();
+        edgeDriver.close();
     }
 }
