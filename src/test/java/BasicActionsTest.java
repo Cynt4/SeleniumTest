@@ -1,8 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -10,7 +7,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class BasicActionsTest {
-    @Test
+//    @Test
     public void performAction() {
 
         WebDriverManager.chromedriver().setup();
@@ -27,6 +24,9 @@ public class BasicActionsTest {
         System.out.println(usernameInput.getAttribute("value"));
 //        usernameInput.sendKeys(Keys.ENTER);
         usernameInput.sendKeys(Keys.TAB);
+        Alert firstAlert = driver.switchTo().alert();
+//        firstAlert.accept();
+//        driver.switchTo().alert().accept();
 
 //        driver.findElement(By.cssSelector("[type='checkbox')")).click();
         driver.findElement(By.cssSelector("[value='male']")).click();
