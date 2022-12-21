@@ -9,13 +9,11 @@ import java.util.List;
 public class BasicActionsTest {
 //    @Test
     public void performAction() {
-
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://testeroprogramowania.github.io/selenium/");
 
         WebElement basicLink = driver.findElement(By.linkText("Podstawowa strona testowa"));
-        System.out.println(basicLink.getText());
         basicLink.click();
         driver.findElement(By.id("fname")).sendKeys("Jacek");
         WebElement usernameInput = driver.findElement(By.name("username"));

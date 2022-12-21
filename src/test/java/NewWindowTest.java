@@ -18,7 +18,7 @@ public class NewWindowTest {
         basiclink.click();
         String currentWindow = driver.getWindowHandle();
         driver.findElement(By.cssSelector("#newPage")).click();
-//        driver.switchTo().frame();
+//        driver.switchTo().frame(0);
         Set<String> windowNames = driver.getWindowHandles();
         for (String window : windowNames) {
             if (!window.equals(currentWindow)) {
@@ -26,6 +26,8 @@ public class NewWindowTest {
             }
         }
         driver.findElement(By.name("q")).sendKeys("Selenium");
+        driver.switchTo().window(currentWindow);
+        driver.findElement(By.name("fname")).sendKeys("Jacek");
 //        Alert alerthandler = driver.switchTo().alert();
 //        alerthandler.accept();
 
